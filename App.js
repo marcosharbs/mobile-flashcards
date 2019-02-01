@@ -1,21 +1,22 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Component } from 'react';
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
+import reducer from './src/reducers'
+import middleware from './src/middleware'
+import { AsyncStorage } from 'react-native'
+import FlashcardsApp from './src/FlashcardsApp'
 
-export default class App extends React.Component {
+const store = createStore(reducer, middleware)
+store.subscribe(() => {
+  AsyncStorage.setItem('SAVED_STORE', JSON.stringify(store.getState()))
+})
+
+export default class App extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-      </View>
+      <Provider store={store}>
+        <FlashcardsApp />
+      </Provider>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
