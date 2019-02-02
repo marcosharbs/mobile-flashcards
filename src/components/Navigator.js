@@ -7,6 +7,7 @@ import DeckList from './DeckList'
 import NewDeck from './NewDeck'
 import DeckDetail from './DeckDetail'
 import AddCard from './AddCard'
+import Quiz from './Quiz'
 
 const HomeTabs = createBottomTabNavigator({
     Decks: {
@@ -26,7 +27,8 @@ const HomeTabs = createBottomTabNavigator({
 const AppNavigator = createStackNavigator({
     Home: HomeTabs,
     DeckDetail: DeckDetail,
-    AddCard: AddCard
+    AddCard: AddCard,
+    Quiz: Quiz
 })
 
 export default createAppContainer(AppNavigator)

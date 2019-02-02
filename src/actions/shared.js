@@ -6,7 +6,7 @@ export const handleInitialData = () => (dispatch) => {
     return AsyncStorage.getItem('SAVED_STORE')
         .then(JSON.parse)
         .then(store => {
-            dispatch(receiveDecks(store.decks))
-            dispatch(receivePlays(store.plays))
+            dispatch(receiveDecks(store ? store.decks : {}))
+            dispatch(receivePlays(store ? store.plays: {}))
         })
 }

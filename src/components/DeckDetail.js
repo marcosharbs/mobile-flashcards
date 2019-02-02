@@ -17,6 +17,11 @@ class DeckDetail extends Component {
         navigation.navigate('AddCard', { deckTitle: deck.title })
     }
 
+    onQuiz = () => {
+        const { deck, navigation } = this.props
+        navigation.navigate('Quiz', { deckTitle: deck.title })
+    }
+
     render() {
         const { deck } = this.props
 
@@ -29,6 +34,8 @@ class DeckDetail extends Component {
                 />
                 <DefaultButton
                     label={'START QUIZ'}
+                    onPress={this.onQuiz}
+                    disabled={deck.questions.length === 0}
                 />
             </View>
         )
