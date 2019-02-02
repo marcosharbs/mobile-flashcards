@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { WHITE, LIGHT_PURPLE } from '../../assets/colors'
 import { PrimaryButton, DefaultButton } from './Buttons'
 import { addPlay } from '../actions/plays'
+import { clearLocalNotifications } from '../utils/helpers'
 
 class Quiz extends Component {
 
@@ -65,6 +66,8 @@ class Quiz extends Component {
             hits,
             mistakes
         })
+        
+        clearLocalNotifications()
     }
 
     onRestartQuiz = () => {
