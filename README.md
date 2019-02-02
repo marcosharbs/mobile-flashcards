@@ -2,6 +2,11 @@
 
 Flashcards é um aplicativo de quiz. Foi desenvolvido utilizando React Native e o gerenciamento do estado da aplicação é feito utilizando Redux.
 
+### Testes
+
+O aplicativo foi desenvolvido e testado usando o simulador ios (Version 10.0 (SimulatorApp-835.5)),
+usando o device iPhone X selecionado.
+
 ### Instalação
 
 Para rodar a aplicação os seguintes passos são necessários.
